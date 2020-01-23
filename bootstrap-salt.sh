@@ -5296,7 +5296,7 @@ install_freebsd_deps() {
 }
 
 install_freebsd_git_deps() {
-    install_freebsd_stable_deps || return 1
+    install_freebsd_deps || return 1
 
     SALT_DEPENDENCIES=$(/usr/local/sbin/pkg search -R -d py36-salt | grep 'origin:' \
         | tail -n +2 | awk -F\" '{print $2}' | sed 's#.*/py-#py36-#g')
